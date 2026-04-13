@@ -18,10 +18,12 @@ FalkorDB does not have built-in graph-level version control. **falgit** adds cha
 ## Installation
 
 ```bash
-pip install falgit
+git clone https://github.com/falgit/falgit.git
+cd falgit
+pip install -e .
 ```
 
-Requires a running FalkorDB instance (Redis-compatible).
+Requires Python 3.8+ and a running FalkorDB instance (Redis-compatible).
 
 ## Quick Start
 
