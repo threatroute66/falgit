@@ -1,0 +1,43 @@
+[project]
+name = "falgit"
+version = "0.1.0"
+description = "Git-like version control for FalkorDB graphs"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.10"
+authors = [
+    {name = "falgit contributors"},
+]
+keywords = ["falkordb", "graph", "version-control", "git"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Database",
+    "Topic :: Software Development :: Version Control",
+]
+dependencies = [
+    "falkordb>=1.0.0",
+    "click>=8.0",
+]
+
+[project.scripts]
+falgit = "falgit.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/falgit/falgit"
+Repository = "https://github.com/falgit/falgit"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/falgit"]
+
+[project.optional-dependencies]
+dev = ["pytest", "pytest-cov", "ruff"]
