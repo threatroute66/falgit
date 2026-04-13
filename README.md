@@ -95,12 +95,14 @@ falgit merge my_graph feature-x
 
 ## How It Works
 
-falgit stores version control metadata in a companion FalkorDB graph named `_falgit_{graphname}`. This graph tracks:
+falgit does not store any data on the local filesystem. All version control metadata is stored inside your FalkorDB instance as a companion graph named `_falgit_{graphname}`. This graph tracks:
 
 - **Commits** with timestamps, messages, and parent references
 - **Snapshots** — full serialized graph state at each commit
 - **Diffs** — granular per-node/edge change records
 - **Branches** — named pointers to commit heads
+
+> **Note:** Because falgit data lives entirely within FalkorDB, if the FalkorDB instance is lost or destroyed, all version history is lost with it. Consider backing up your FalkorDB data (e.g., RDB/AOF snapshots) to protect both your graphs and their falgit history.
 
 ### Node Identity
 
